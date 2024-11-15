@@ -173,7 +173,7 @@ function adjustFontSize() {
   const textElement = document.querySelector('.overlay-text');
   
   // 根据屏幕宽度和高度计算字体大小
-  const fontSize = Math.min(window.innerWidth, window.innerHeight) / 10; // 例如，宽度和高度的最小值的 1/10
+  const fontSize = Math.min(window.innerWidth, window.innerHeight) / 50; // 例如，宽度和高度的最小值的 1/10
 
   // 设置字体大小
   textElement.style.fontSize = `${fontSize}px`;
