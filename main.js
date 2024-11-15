@@ -59,7 +59,7 @@ async function loadFontAndCreateText() {
   // 创建文本几何体
   const textGeometry = new THREE.TextGeometry('Paul Architect', {
     font: font,
-    size: 3,  // 字体大小
+    size: window.innerWidth/100,  // 字体大小
     height: 0.2,
     curveSegments: 20,
     bevelEnabled: true,
@@ -167,6 +167,7 @@ window.addEventListener('touchend', () => {
     imageDisplay.style.opacity = 0;
   }
 });
+
 
 // // 动态调整字体大小
 // function adjustFontSize() {
