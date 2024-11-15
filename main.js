@@ -168,19 +168,19 @@ window.addEventListener('touchend', () => {
   }
 });
 
-// 动态调整字体大小
-function adjustFontSize() {
-  const textElement = document.querySelector('.overlay-text');
+// // 动态调整字体大小
+// function adjustFontSize() {
+//   const textElement = document.querySelector('.overlay-text');
   
-  // 根据屏幕宽度和高度计算字体大小
-  const fontSize = Math.min(window.innerWidth, window.innerHeight) / 50; // 例如，宽度和高度的最小值的 1/10
+//   // 根据屏幕宽度和高度计算字体大小
+//   const fontSize = Math.min(window.innerWidth, window.innerHeight) / 50; // 例如，宽度和高度的最小值的 1/10
 
-  // 设置字体大小
-  textElement.style.fontSize = `${fontSize}px`;
-}
+//   // 设置字体大小
+//   textElement.style.fontSize = `${fontSize}px`;
+// }
 
-// 初始化并在窗口大小变化时调整字体大小
-window.addEventListener('resize', adjustFontSize);
+// // 初始化并在窗口大小变化时调整字体大小
+// window.addEventListener('resize', adjustFontSize);
 
-// 初始调用
-adjustFontSize();
+// // 初始调用
+// adjustFontSize();
