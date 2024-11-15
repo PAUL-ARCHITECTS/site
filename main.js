@@ -59,7 +59,7 @@ async function loadFontAndCreateText() {
   // 创建文本几何体
   const textGeometry = new THREE.TextGeometry('Paul Architect', {
     font: font,
-    size: window.innerWidth/100,  // 字体大小
+    size: 25,  // 字体大小
     height: 0.2,
     curveSegments: 20,
     bevelEnabled: true,
