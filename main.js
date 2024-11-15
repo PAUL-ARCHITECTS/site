@@ -12,7 +12,7 @@ function createTrapezoidalPyramid() {
   const geometry = new THREE.BufferGeometry();
   
   // 顶点位置
-  const vertices = new Float32Array([
+  const vertices = new Float32Array([ 
     -2, -2, 0,  // 底面左
      2, -2, 0,  // 底面右
      1,  2, 0,  // 底面右上
@@ -49,6 +49,16 @@ scene.add(pyramid);
 // 设置相机的位置
 camera.position.z = 8;
 
+// 声明 lineMesh 为全局变量
+let lineMesh; 
+
+// 创建一个空物体作为旋转中心
+const pivot = new THREE.Object3D();
+scene.add(pivot);  // 将空物体添加到场景中
+
+// 设置空物体的位置作为旋转中心
+pivot.position.set(0, 0, 0); // 旋转中心
+
 // 加载字体并创建文字
 async function loadFontAndCreateText() {
   const loader = new THREE.FontLoader();
@@ -77,13 +87,12 @@ async function loadFontAndCreateText() {
   // 使文本几何体成为线框
   const edges = new THREE.EdgesGeometry(textGeometry); // 获取文本的边缘几何体
   const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000762 }); // 使用红色线框材质
-  const lineMesh = new THREE.LineSegments(edges, lineMaterial);  // 使用LineSegments绘制文本的边缘
+  lineMesh = new THREE.LineSegments(edges, lineMaterial);  // 使用LineSegments绘制文本的边缘
 
   // 设置文本和线框的位置，使其居中
   lineMesh.position.set(-textWidth / 2, -textHeight / 2, 2);  // 对齐中心
-  // lineMesh.rotation.x = -1;
 
-  scene.add(lineMesh);
+  pivot.add(lineMesh);
 }
 
 loadFontAndCreateText().catch(err => console.error("Font loading failed:", err));
@@ -95,7 +104,12 @@ function animate() {
   // 让梯形锥体旋转
   pyramid.rotation.x += 0.01;
   pyramid.rotation.y += 0.01;
-  
+
+  // 检查 lineMesh 是否已加载
+  if (pivot) {
+    pivot.rotation.x += 0.01;
+    pivot.rotation.y += 0.01;
+  }
 
   // 渲染场景
   renderer.render(scene, camera);
@@ -167,21 +181,3 @@ window.addEventListener('touchend', () => {
     imageDisplay.style.opacity = 0;
   }
 });
-
-
-// // 动态调整字体大小
-// function adjustFontSize() {
-//   const textElement = document.querySelector('.overlay-text');
-  
-//   // 根据屏幕宽度和高度计算字体大小
-//   const fontSize = Math.min(window.innerWidth, window.innerHeight) / 50; // 例如，宽度和高度的最小值的 1/10
-
-//   // 设置字体大小
-//   textElement.style.fontSize = `${fontSize}px`;
-// }
-
-// // 初始化并在窗口大小变化时调整字体大小
-// window.addEventListener('resize', adjustFontSize);
-
-// // 初始调用
-// adjustFontSize();
