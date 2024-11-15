@@ -76,7 +76,7 @@ async function loadFontAndCreateText() {
 
   // 使文本几何体成为线框
   const edges = new THREE.EdgesGeometry(textGeometry); // 获取文本的边缘几何体
-  const lineMaterial = new THREE.LineBasicMaterial({ color: 0xff0000 }); // 使用红色线框材质
+  const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000762 }); // 使用红色线框材质
   const lineMesh = new THREE.LineSegments(edges, lineMaterial);  // 使用LineSegments绘制文本的边缘
 
   // 设置文本和线框的位置，使其居中
