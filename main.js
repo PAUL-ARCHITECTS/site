@@ -37,7 +37,7 @@ function createTrapezoidalPyramid() {
   // 计算法线
   geometry.computeVertexNormals();
 
-  const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true });
+  const material = new THREE.MeshBasicMaterial({ color: 0xffffff, wireframe: true });
   const pyramid = new THREE.Mesh(geometry, material);
   return pyramid;
 }
