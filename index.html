@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Three.js with Mouse Control</title>
-  <style>
-    body { margin: 0; overflow: hidden; }
-    canvas { display: block; }
-  </style>
-</head>
-<body>
-  <script type="module" src="main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js with HTML Font</title>
+    <style>
+      body { margin: 0; overflow: hidden; }
+      canvas {  display: block; z-index: 5;}
+
+      /* 使用绝对定位将文本置于 Three.js 渲染之上 */
+      .overlay-text {
+        position: absolute;
+        top: 50%;  /* 居中 */
+        left: 50%; 
+        transform: translate(-50%, -50%);  /* 完全居中 */
+        font-size: 40px;
+        font-family: Arial, sans-serif;
+        color: white;
+        text-align: center;
+        z-index: 10;
+      }
+
+      /* 图片展示区域 */
+      #imageDisplay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;  /* 最大宽度为80% */
+        max-height: 100%; /* 最大高度为80% */
+        object-fit: contain;  /* 保持原始比例显示图片 */
+        opacity: 0;  /* 初始隐藏 */
+        transition: opacity 0.5s ease; /* 淡入效果 */
+        z-index: 1; /* 使图片位于 Three.js 渲染区域之下 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay-text">Paul Architects</div> <!-- 中央文本 -->
+    <img id="imageDisplay" src="images/image1.png" alt="Mouse Position Image"> <!-- 图片元素 -->
+    <script type="module" src="main.js"></script> <!-- 引入 JavaScript -->
+  </body>
 </html>
