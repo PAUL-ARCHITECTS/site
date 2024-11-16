@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,3 +47,78 @@
     <script type="module" src="main.js"></script> <!-- 引入 JavaScript -->
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paul Architects</title>
+
+  <!-- 设置 favicon 图标 -->
+  <link rel="icon" href="images/logo.png" type="image/png" sizes="48x48" />
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    canvas {
+      display: block;
+      z-index: 5;
+    }
+
+    /* 图片展示区域 */
+    #imageDisplay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 1;
+    }
+
+    /* 使用绝对定位将文本置于 Three.js 渲染之上 */
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1vw;
+      color: white;
+      text-align: center;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay-text">Paul Architects</div>
+  <img id="imageDisplay" src="images/image1.png" alt="Mouse Position Image" />
+
+  <script type="module" src="main.js"></script>
+  <a href="about.html">ABOUT</a>
+</body>
+
+</html>
+
+<style>
+  a {
+    color: black;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+  }
+
+  body {
+    font-family: 'Times New Roman', Times, serif;
+  }
+</style>
+>>>>>>> 226eb43 (Initial commit)
