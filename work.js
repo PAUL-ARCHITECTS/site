@@ -69,6 +69,7 @@ window.addEventListener('click', (event) => {
     adjustImageSize(img);
   } else {
     img.onload = function() {
+      
       adjustImageSize(img); // 图片加载完成后调整尺寸
     };
   }
@@ -96,3 +97,4 @@ function adjustImageSize(img) {
   img.style.width = `${originalWidth * scaleFactorWidth}px`;
   img.style.height = `${originalHeight * scaleFactorHeight}px`;
 };
+
