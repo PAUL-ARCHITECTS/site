@@ -26,9 +26,7 @@ function createTrapezoidalPyramid() {
     0, 1, 4, // 底面左-右-顶
     1, 2, 4, // 底面右-右上-顶
     2, 3, 4, // 底面右上-左上-顶
-    3, 0, 4, // 底面左上-左-顶
-    // 0, 1, 2, // 底面左-右-右上
-    // 0, 2, 3  // 底面左-右上-左上
+    3, 0, 4  // 底面左上-左-顶
   ];
 
   // 将顶点和索引添加到几何体中
@@ -126,10 +124,12 @@ window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
+
+
 // 获取图片元素
 const imageDisplay = document.getElementById('imageDisplay');
 
-// 图片数组，根据鼠标位置改变显示的图片
+// 图片数组
 const imagePaths = [
   'images/image1.png',
   'images/image2.png',
@@ -138,48 +138,49 @@ const imagePaths = [
   'images/image5.png'
 ];
 
-// 监听鼠标移动事件
-window.addEventListener('mousemove', (event) => {
-  // 获取鼠标的屏幕坐标
-  const mouseX = event.clientX / window.innerWidth; // 0到1之间
-  const mouseY = event.clientY / window.innerHeight; // 0到1之间
+let currentIndex = -1; // 当前图片索引，-1表示未显示任何图片
+let fadeTimeout; // 定时器
 
-  // 根据鼠标位置更新图片
-  const imageIndex = Math.floor(mouseX * imagePaths.length); // 根据鼠标的 X 坐标选择图片（0~4）
-  
-  // 更新图片源
-  imageDisplay.src = imagePaths[imageIndex];
-
-  // 显示图片并添加淡入效果
-  imageDisplay.style.opacity = 1;
-});
-
-// 监听触摸移动事件
-window.addEventListener('touchmove', (event) => {
-  if (isTouchEvent) {
-    // 获取触摸的屏幕坐标
-    const touchX = event.touches[0].clientX / window.innerWidth; // 0到1之间
-    const touchY = event.touches[0].clientY / window.innerHeight; // 0到1之间
-
-    // 根据触摸位置更新图片
-    const imageIndex = Math.floor(touchX * imagePaths.length); // 根据触摸的 X 坐标选择图片（0~4）
-
-    // 更新图片源
-    imageDisplay.src = imagePaths[imageIndex];
-
-    // 显示图片并添加淡入效果
+// 更新图片函数
+function updateImage(index) {
+  if (index >= 0 && index < imagePaths.length) {
+    currentIndex = index;
+    imageDisplay.src = imagePaths[currentIndex];
     imageDisplay.style.opacity = 1;
+
+    // 清除之前的淡出定时器
+    clearTimeout(fadeTimeout);
+
+    // 设置新的淡出定时器
+    fadeTimeout = setTimeout(() => {
+      imageDisplay.style.opacity = 0;
+      currentIndex = -1; // 隐藏图片后重置索引
+    }, 4600); // 60秒后淡出
+  }
+}
+
+// 监听屏幕点击事件
+window.addEventListener('click', (event) => {
+  const screenWidth = window.innerWidth;
+
+  if (currentIndex === -1) {
+    // 如果当前未显示任何图片，直接显示第一张
+    updateImage(0);
+  } else {
+    // 检查点击位置是屏幕左边还是右边
+    if (event.clientX < screenWidth / 2) {
+      // 点击左边，显示上一张图片
+      if (currentIndex > 0) {
+        updateImage(currentIndex - 1);
+      }
+    } else {
+      // 点击右边，显示下一张图片
+      if (currentIndex < imagePaths.length - 1) {
+        updateImage(currentIndex + 1);
+      }
+    }
   }
 });
 
-// 监听鼠标离开事件，隐藏图片
-window.addEventListener('mouseout', () => {
-  imageDisplay.style.opacity = 0;
-});
-
-// 监听触摸结束事件，隐藏图片
-window.addEventListener('touchend', () => {
-  if (isTouchEvent) {
-    imageDisplay.style.opacity = 0;
-  }
-});
+// 初始化：确保图片隐藏
+imageDisplay.style.opacity = 0;
