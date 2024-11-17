@@ -38,7 +38,6 @@ function updateImage(index) {
     // 设置新的淡出定时器
     fadeTimeout = setTimeout(() => {
       imageDisplay.style.opacity = 0;
-      currentIndex = -1; // 隐藏图片后重置索引
     }, 4600); // 60秒后淡出
   }
 }
