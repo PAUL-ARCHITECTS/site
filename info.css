@@ -1,0 +1,229 @@
+body {
+  display: flex;
+  /* 启用 Flexbox */
+  justify-content: flex-start;
+  /* 设置水平对齐方式 */
+  align-items: center;
+  /* 设置垂直对齐方式 */
+  gap: 10px;
+  /* 设置子元素之间的间距 */
+}
+
+h1 {
+  position: sticky;
+  color: #0023ff;
+  top: 0;
+  z-index: 5;
+  /* 确保粘性元素显示在内容之上 */
+  padding: 1px;
+}
+
+.parent {
+  font-size: 1vh;
+position: relative;
+  width: 100vw;
+  height: 160vh;
+  display: flex;
+  /* 启用 Flexbox */
+  flex-direction: column;
+  /* 垂直排列子元素 */
+  justify-content: center;
+  /* 垂直方向居中（可以调整为其他值） */
+  align-items: center;
+  /* 水平方向居中 */
+
+}
+
+.child {
+  color: white;
+  display: flex;
+  /* 启用 Flexbox */
+  flex-direction: column;
+  /* 垂直排列子元素 */
+  justify-content: center;
+  /* 垂直方向居中（可以调整为其他值） */
+  align-items: center;
+  /* 水平方向居中 */
+  background-color: black;
+  height: 820vh;
+  /* 高度设置 */
+  width: 6vw;
+  /* 可根据需要调整宽度 */
+  margin: 10px;
+  /* 控制子元素之间的间距 */
+  transition: transform 0.5s ease;
+  /* 添加平滑过渡效果 */
+}
+
+.container {
+  position: fixed;
+  top: 78VH;
+  left: 11VW;
+  height: 15VH;
+  flex-direction: column;
+  /* 改变为列方向 */
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  overflow: hidden;
+  /* 防止文字超出边界 */
+  /* opacity: 0; */
+  animation: none;
+}
+
+.container:hover {
+  opacity: 0.5;
+  /* 悬停时使容器变得透明 */
+}
+
+.text {
+  font-size: 1vh;
+  height: 1vh;
+  color: rgb(159, 159, 159);
+  opacity: 1;
+  /* 初始文字透明 */
+  transform: translateY(20px);
+  /* 文字初始位置稍微向下 */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  /* 文字的过渡效果 */
+}
+
+.container:hover .text {
+  opacity: 1;
+  /* 悬停时文字逐渐显示 */
+  transform: translateY(0);
+  /* 文字平移回初始位置 */
+}
+
+.child:hover {
+  transform: rotate(90deg);
+  /* 鼠标悬停时顺时针旋转 90 度 */
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+div {
+  animation: move 50s infinite;
+}
+
+.op {
+  opacity: 0;
+  top: 2px;
+  width: 100vw;
+  font-size: 15vh;
+  height: 15vh;
+  position: relative;
+  animation: none;
+}
+
+
+
+
+
+/* 固定的 Header 样式 */
+.header {
+  display: grid;
+  /* 使用 grid 布局 */
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  /* 水平居中每个 grid 项 */
+  /* 三个等宽的列 */
+  grid-template-rows: 1fr;
+  /* 一行 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  /* 定义固定的高度 */
+  padding: 10px 20px;
+  z-index: 1000;
+  animation: none;
+  /* 背景色，防止内容被遮挡 */
+}
+
+.headerlayout {
+  height: 300vh;
+  padding: 2px;
+
+  animation: none;
+}
+
+/* 每个 Header 项的样式 */
+.headerdivp {
+  animation: none;
+  position: sticky;
+  top: -6vw;
+  /* font-family: 'Microsoft YaHei', sans-serif; */
+  /* 微软雅黑字体 */
+  font-weight: bold;
+  /* 加粗 */
+  font-size: 8vw;
+  /* 字体大小 */
+  color: rgb(0, 0, 0);
+  /* 红色文字 */
+  cursor: pointer;
+  /* 鼠标悬停时显示为可点击 */
+  transition: color 0.3s;
+  /* 平滑的颜色过渡效果 */
+}
+
+/* 每个 Header 项的样式 */
+.headerdivw {
+  animation: none;
+  position: sticky;
+  top: -6vw;
+  /* font-family: 'Microsoft YaHei', sans-serif; */
+  /* 微软雅黑字体 */
+  font-weight: bold;
+  /* 加粗 */
+  font-size: 8vw;
+  /* 字体大小 */
+  color: rgb(0, 0, 0);
+  /* 红色文字 */
+  cursor: pointer;
+  /* 鼠标悬停时显示为可点击 */
+  transition: color 0.3s;
+  /* 平滑的颜色过渡效果 */
+}
+
+.headerdivi {
+  position: sticky;
+  top: -2vw;
+
+  /* font-family: 'Times New Roman', Times, serif; */
+  /* 微软雅黑字体 */
+  font-weight: bold;
+  /* 加粗 */
+  font-size: 8vw;
+  /* 字体大小 */
+  color: rgb(0, 25, 151);
+  /* 红色文字 */
+  cursor: pointer;
+  /* 鼠标悬停时显示为可点击 */
+  transition: color 0.3s;
+  /* 平滑的颜色过渡效果 */
+}
+
+/* 鼠标悬停时改变颜色 */
+.header div:hover {
+  color: rgb(69, 69, 69);
+  /* 悬停时变为深红色 */
+}
+
+/* 页面内容样式 */
+.content {
+  margin-top: 100px;
+  /* 给 Header 留出空间 */
+  padding: 20px;
+}
