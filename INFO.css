@@ -19,8 +19,9 @@ h1 {
 }
 
 .parent {
+  z-index: 12;
   font-size: 1vh;
-
+  position: relative;
   width: 100vw;
   height: 160vh;
   display: flex;
@@ -34,7 +35,26 @@ h1 {
 
 }
 
+a {
+  font-size: 1vh;
+  color: black;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  display: block;
+}
+
+p {
+  font-family: 'Times New Roman';
+  z-index: 11;
+}
+
 .child {
+  z-index: 12;
   color: white;
   display: flex;
   /* 启用 Flexbox */
@@ -56,6 +76,7 @@ h1 {
 }
 
 .container {
+  z-index: 12;
   position: fixed;
   top: 78VH;
   left: 11VW;
@@ -79,9 +100,10 @@ h1 {
 }
 
 .text {
+  z-index: 12;
   font-size: 1vh;
   height: 1vh;
-  color: rgb(159, 159, 159);
+  color: rgb(19, 19, 19);
   opacity: 1;
   /* 初始文字透明 */
   transform: translateY(20px);
@@ -117,10 +139,11 @@ div {
 }
 
 .op {
-  /* opacity: 0; */
+  opacity: 0;
+  top: 2px;
   width: 100vw;
-  font-size: 50vh;
-  height: 50vh;
+  font-size: 15vh;
+  height: 15vh;
   position: relative;
   animation: none;
 }
@@ -146,12 +169,20 @@ div {
   height: 10vh;
   /* 定义固定的高度 */
   padding: 10px 20px;
-  z-index: 1000;
+  z-index: 10;
   animation: none;
   /* 背景色，防止内容被遮挡 */
 }
 
 .headerlayout {
+  height: 300vh;
+  padding: 2px;
+  background-color: #0023ff;
+  animation: none;
+
+}
+
+.headerlayouts {
   height: 300vh;
   padding: 2px;
 
