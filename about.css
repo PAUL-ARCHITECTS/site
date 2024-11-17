@@ -44,13 +44,13 @@ body {
     transform: translate(-50%, -50%);
     width: 80vw;
     height: 40vh;
-    background-color: black;
+    /* background-color: black; */
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     overflow: hidden; /* 防止文字超出边界 */
-    opacity: 0;
+    /* opacity: 0; */
     animation: none;
   }
   
@@ -59,7 +59,7 @@ body {
   }
   
   .text {
-    color: white;  
+    color: rgb(159, 159, 159);  
     opacity: 0; /* 初始文字透明 */
     transform: translateY(20px); /* 文字初始位置稍微向下 */
     transition: opacity 0.5s ease, transform 0.5s ease; /* 文字的过渡效果 */
