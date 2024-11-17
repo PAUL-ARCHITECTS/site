@@ -64,6 +64,15 @@ window.addEventListener('click', (event) => {
       }
     }
   }
+
+  // 每次点击后调整图片大小
+  if (img.complete) { // 确保图片已经加载完成
+    adjustImageSize(img);
+  } else {
+    img.onload = function() {
+      adjustImageSize(img); // 图片加载完成后调整尺寸
+    };
+  }
 });
 
 // 初始化：确保图片隐藏
@@ -71,17 +80,20 @@ imageDisplay.style.opacity = 0;
 
 const img = document.getElementById('imageDisplay');
 
-img.onload = function() {
-    const originalWidth = img.naturalWidth;
-    const originalHeight = img.naturalHeight;
-    
-    // 获取父容器的尺寸
-    const containerWidth = img.parentElement.clientWidth;
-    const containerHeight = img.parentElement.clientHeight;
+// 调整图片大小的函数
+function adjustImageSize(img) {
+  const originalWidth = img.naturalWidth; // 图片原始宽度
+  const originalHeight = img.naturalHeight; // 图片原始高度
 
-    const scaleFactorWidth = Math.min(containerWidth / originalWidth, 3.5); // 最大缩放倍数为2
-    const scaleFactorHeight = Math.min(containerHeight / originalHeight, 3.5); // 最大缩放倍数为2
+  // 获取父容器的宽度和高度
+  const containerWidth = img.parentElement.clientWidth;
+  const containerHeight = img.parentElement.clientHeight;
 
-    img.style.width = `${originalWidth * scaleFactorWidth}px`;
-    img.style.height = `${originalHeight * scaleFactorHeight}px`;
+  // 计算缩放因子，确保图片适应容器且最大缩放倍数为3.5
+  const scaleFactorWidth = Math.min(containerWidth / originalWidth, 3.5);
+  const scaleFactorHeight = Math.min(containerHeight / originalHeight, 3.5);
+
+  // 设置图片尺寸
+  img.style.width = `${originalWidth * scaleFactorWidth}px`;
+  img.style.height = `${originalHeight * scaleFactorHeight}px`;
 };
