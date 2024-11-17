@@ -89,8 +89,8 @@ function adjustImageSize(img) {
   const containerHeight = img.parentElement.clientHeight;
 
   // 计算缩放因子，确保图片适应容器且最大缩放倍数为3.5
-  const scaleFactorWidth = Math.min(containerWidth / originalWidth, 3.5);
-  const scaleFactorHeight = Math.min(containerHeight / originalHeight, 3.5);
+  const scaleFactorWidth = Math.min(containerWidth / originalWidth, 2);
+  const scaleFactorHeight = Math.min(containerHeight / originalHeight, 2);
 
   // 设置图片尺寸
   img.style.width = `${originalWidth * scaleFactorWidth}px`;
