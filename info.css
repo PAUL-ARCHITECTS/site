@@ -57,7 +57,7 @@ position: relative;
 
 .container {
   position: fixed;
-  top: 78VH;
+  top:50vH;
   left: 11VW;
   height: 15VH;
   flex-direction: column;
