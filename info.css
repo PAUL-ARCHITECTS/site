@@ -20,7 +20,7 @@ h1 {
 
 .parent {
   font-size: 1vh;
-
+position: relative;
   width: 100vw;
   height: 160vh;
   display: flex;
@@ -117,10 +117,11 @@ div {
 }
 
 .op {
-  /* opacity: 0; */
+  opacity: 0;
+  top: 2px;
   width: 100vw;
-  font-size: 50vh;
-  height: 50vh;
+  font-size: 15vh;
+  height: 15vh;
   position: relative;
   animation: none;
 }
