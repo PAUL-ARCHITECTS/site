@@ -201,14 +201,14 @@ div {
 .headerdivs {
   animation: none;
   position: sticky;
-  top: -1vw;
+  top: -4vw;
   /* font-family: 'Microsoft YaHei', sans-serif; */
   /* 微软雅黑字体 */
   font-weight: bold;
   /* 加粗 */
   font-size: 6vw;
   /* 字体大小 */
-  color: rgb(0, 25, 151);
+  color: rgb(0, 0, 0);
   /* 红色文字 */
   cursor: pointer;
   /* 鼠标悬停时显示为可点击 */
@@ -218,8 +218,8 @@ div {
 
 .headerdivi {
   position: sticky;
-  top: -4vw;
-  animation: none;
+  top: -1vw;
+
   /* font-family: 'Times New Roman', Times, serif; */
   /* 微软雅黑字体 */
   font-weight: bold;
@@ -232,9 +232,7 @@ div {
   /* 鼠标悬停时显示为可点击 */
   transition: color 0.3s;
   /* 平滑的颜色过渡效果 */
-  color: transparent;
-  -webkit-text-stroke: 0.1vh rgb(0, 25, 151); /* 添加外部描边 */
-  -webkit-background-clip: text; /* 背景剪裁到文字 */
+  
 }
 
 /* 鼠标悬停时改变颜色 */
