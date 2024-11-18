@@ -60,9 +60,9 @@ position: relative;
   /* 改变为列方向 */
   /* background-color: black; */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
+  justify-content: flex-start;
+  /* align-items: center; */
+
   overflow: hidden;
   /* 防止文字超出边界 */
   /* opacity: 0; */
