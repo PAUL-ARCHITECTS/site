@@ -41,6 +41,6 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.m
             cube2.position.x = 1 + separation;  // 立方体2向右移动
         });
 
-        // const container = document.getElementById('three-container');
-        // renderer.setSize(container.clientWidth, container.clientHeight);
-        // container.appendChild(renderer.domElement);
+        const container = document.getElementById('three-container');
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(renderer.domElement);
