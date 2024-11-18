@@ -34,9 +34,9 @@ canvas {
   font-size: 1vh;
   color: white;
   text-align: center;
-  z-index: 10;
+  z-index: 1000;
 }
-  
+
 /* 固定的 Header 样式 */
 .header {
   display: grid;
@@ -61,8 +61,9 @@ canvas {
 
 /* 滚动内容样式 */
 .headerlayout {
-position: relative;
-  top: 0vh; /* 确保滚动内容不被 Header 遮挡 */
+  position: relative;
+  top: 0vh;
+  /* 确保滚动内容不被 Header 遮挡 */
   height: 500vh;
   animation: none;
 }
@@ -72,9 +73,11 @@ position: relative;
 /* 每个 Header 项的样式 */
 .headerdivp {
   position: sticky;
-  top: -0; /* 在父级容器顶部时固定 */
+  top: -0;
+  /* 在父级容器顶部时固定 */
   font-weight: bold;
-  font-size: 6vw; /* 字体大小 */
+  font-size: 6vw;
+  /* 字体大小 */
   color: rgb(128, 0, 0);
   cursor: pointer;
   transition: color 0.3s ease;
@@ -135,20 +138,112 @@ position: relative;
   transition: color 0.3s;
   /* 平滑的颜色过渡效果 */
   color: transparent;
-  -webkit-text-stroke: 0.1vh rgb(0, 0, 0); /* 添加外部描边 */
-  -webkit-background-clip: text; 背景剪裁到文字
-}  
+  -webkit-text-stroke: 0.1vh rgb(0, 0, 0);
+  /* 添加外部描边 */
+  -webkit-background-clip: text;
+  背景剪裁到文字
+}
 
 
-  /* 鼠标悬停时改变颜色 */
-  .header div:hover {
-    color: rgb(69, 69, 69);
-    /* 悬停时变为深红色 */
-  }
-  
-  /* 页面内容样式 */
-  .content {
-    margin-top: 100px;
-    /* 给 Header 留出空间 */
-    padding: 20px;
-  }
+/* 鼠标悬停时改变颜色 */
+.header div:hover {
+  color: rgb(69, 69, 69);
+  /* 悬停时变为深红色 */
+}
+
+/* 页面内容样式 */
+.content {
+  margin-top: 100px;
+  /* 给 Header 留出空间 */
+  padding: 20px;
+}
+
+
+      /* 简化的播放器界面样式 */
+      .player-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    /* 音乐播放器 */
+    .audio-player {
+        display: none; /* 隐藏默认的音频控件 */
+    }
+
+    /* 按钮样式 */
+    .control-button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        padding: 15px;
+        font-size: 30px;
+        cursor: pointer;
+        margin: 0 10px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .control-button:hover {
+      color: blue;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* 播放暂停按钮的样式（镂空圆圈） */
+    .play-button {
+        color: blue;
+        font-size: 10px;
+        border: 2px solid white;
+        border-radius: 50%;
+        width: 5px;
+        height: 5px;
+        display: inline-block;
+        transform: scale(0.5); /* 缩小到原来的 50% */
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    .paused .play-button:before {
+      color: blue;
+      content: "❍"; /* 暂停按钮的圆圈符号 */
+      font-size: 5px; /* 基础字体大小 */
+      display: inline-block; /* 确保符号行为一致 */
+      transform: scale(0.5); /* 缩小到原来的 50% */
+      line-height: 1; /* 避免多余的行高 */
+    }
+
+    /* 左右箭头（上一首和下一首） */
+    .prev-button:before {
+      color: blue;
+        content: "◁"; /* 左三角形 */
+    }
+
+    .next-button:before {
+      color: blue;
+        content: "▷"; /* 右三角形 */
+    }
+
+    /* 进度条 */
+    .progress-container {
+        width: 200px;
+        margin: 0 10px;
+        position: relative;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 8px;
+        background-color: #d70000;
+        cursor: pointer;
+    }
+
+    .progress {
+        height: 100%;
+        background-color: #00ff08;
+        width: 0%;
+    }
