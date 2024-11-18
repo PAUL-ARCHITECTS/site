@@ -174,7 +174,7 @@ position: relative;
 .headerdivw {
   animation: none;
   position: sticky;
-  top: 0;
+  top: -4vw;
   /* font-family: 'Microsoft YaHei', sans-serif; */
   /* 微软雅黑字体 */
   font-weight: bold;
@@ -193,7 +193,7 @@ position: relative;
 .headerdivs {
   animation: none;
   position: sticky;
-  top: -4vw;
+  top: -0;
   /* font-family: 'Microsoft YaHei', sans-serif; */
   /* 微软雅黑字体 */
   font-weight: bold;
