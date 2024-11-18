@@ -1,12 +1,8 @@
 body {
-  display: flex;
-  /* 启用 Flexbox */
-  justify-content: flex-start;
-  /* 设置水平对齐方式 */
-  align-items: center;
-  /* 设置垂直对齐方式 */
-  gap: 10px;
-  /* 设置子元素之间的间距 */
+  font-family: 'Times New Roman', Times, serif;
+  display: block;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -117,12 +113,12 @@ div {
 }
 
 .op {
-  opacity: 0;
+  opacity: 1;
   top: 2px;
   width: 100vw;
-  font-size: 15vh;
-  height: 15vh;
-  position: relative;
+  font-size: 50vh;
+  height: 200vh;
+  position: absolute;
   animation: none;
 }
 
@@ -137,52 +133,48 @@ div {
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   /* 水平居中每个 grid 项 */
-  /* 三个等宽的列 */
   grid-template-rows: 1fr;
   /* 一行 */
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 10vh;
   /* 定义固定的高度 */
-  padding: 10px 20px;
+
   z-index: 1000;
-  animation: none;
-  /* 背景色，防止内容被遮挡 */
+
+  /* 半透明背景色 */
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 添加阴影效果 */
 }
 
+/* 滚动内容样式 */
 .headerlayout {
-  height: 300vh;
-  padding: 2px;
-
+position: relative;
+  top: 0vh; /* 确保滚动内容不被 Header 遮挡 */
+  height: 500vh;
   animation: none;
 }
+
+
 
 /* 每个 Header 项的样式 */
 .headerdivp {
   animation: none;
   position: sticky;
-  top: -4vw;
-  /* font-family: 'Microsoft YaHei', sans-serif; */
-  /* 微软雅黑字体 */
+  top: -4vw; /* 在父级容器顶部时固定 */
   font-weight: bold;
-  /* 加粗 */
-  font-size: 6vw;
-  /* 字体大小 */
+  font-size: 6vw; /* 字体大小 */
   color: rgb(0, 0, 0);
-  /* 红色文字 */
   cursor: pointer;
-  /* 鼠标悬停时显示为可点击 */
-  transition: color 0.3s;
-  /* 平滑的颜色过渡效果 */
+  transition: color 0.3s ease;
 }
 
 /* 每个 Header 项的样式 */
 .headerdivw {
   animation: none;
   position: sticky;
-  top: -4vw;
+  top: 0;
   /* font-family: 'Microsoft YaHei', sans-serif; */
   /* 微软雅黑字体 */
   font-weight: bold;
@@ -201,7 +193,7 @@ div {
 .headerdivs {
   animation: none;
   position: sticky;
-  top: -1vw;
+  top: -4vw;
   /* font-family: 'Microsoft YaHei', sans-serif; */
   /* 微软雅黑字体 */
   font-weight: bold;

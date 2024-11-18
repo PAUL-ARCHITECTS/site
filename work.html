@@ -10,43 +10,7 @@
     <!-- 设置 favicon 图标 -->
     <link rel="icon" href="images/logo.png" type="image/png" sizes="48x48" />
 
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-        }
 
-        canvas {
-            display: block;
-            z-index: 5;
-        }
-
-        /* 图片展示区域 */
-        #imageDisplay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: 1;
-        }
-
-        /* 使用绝对定位将文本置于 Three.js 渲染之上 */
-        .overlay-text {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 1vh;
-            color: white;
-            text-align: center;
-            z-index: 10;
-        }
-    </style>
     <!-- Header 部分 -->
     <header class="header">
         <div class="headerlayout">
@@ -72,22 +36,11 @@
     <!-- <div class="overlay-text">PAUL ARCHITECTS</div> -->
     <img id="imageDisplay" src="images/image1.png" alt="Mouse Position Image" />
     <script type="module" src="work.js"></script>
-    <!-- <a href="INFO.html">INFO</a> -->
+
+    <div id="three-container"
+        style="background-color: blue;position: fixed;width: 10vw;height: 10vh;  top: 50%;left: 50%;transform: translate(-50%, -50%);">
+        <script type="module" src="work_1.js"></script>
+    </div>
 </body>
 
 </html>
-
-<style>
-    a {
-        font-size: 1vh;
-        color: black;
-        position: fixed;
-        top: 10px;
-        left: 10px;
-    }
-
-    body {
-        font-family: 'Times New Roman', Times, serif;
-        overflow: auto;
-    }
-</style>
