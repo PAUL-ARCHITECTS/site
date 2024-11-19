@@ -176,7 +176,7 @@ canvas {
     .control-button {
         background-color: transparent;
         border: none;
-        color: white;
+        color: blue;
         padding: 15px;
         font-size: 30px;
         cursor: pointer;
@@ -196,7 +196,7 @@ canvas {
     .play-button {
         color: blue;
         font-size: 10px;
-        border: 2px solid white;
+        border: 2px solid rgb(255, 255, 255);
         border-radius: 50%;
         width: 5px;
         height: 5px;
