@@ -9,8 +9,9 @@
 
   <!-- 设置 favicon 图标 -->
   <link rel="icon" href="images/logo.png" type="image/png" sizes="48x48" />
+</head>
 
-  <!-- Header 部分 -->
+<body>
   <header class="header">
     <div class="headerlayout">
       <div class="headerdivp" onclick="location.href='paul.html'">PAUL</div>
@@ -26,34 +27,21 @@
     </div>
   </header>
 
-</head>
-
-<body>
   <div class="overlay-text">PAUL ARCHITECTS</div>
 
-  <script type="module" src="main.js"></script>
-  <!-- <a href="INFO.html">INFO</a> -->
+  <!-- 音乐播放器 -->
   <div class="overlay-text">
-    <script type="module" src="./music/music.js"></script>
     <div class="player-container">
       <!-- 隐藏原生音频播放器 -->
       <audio id="audio-player" class="audio-player" controls autoplay></audio>
 
-      <!-- 自定义按钮 -->
-      <button id="prev-button" class="control-button prev-button"></button>
+      <!-- 自定义播放/暂停按钮 -->
       <button id="play-button" class="control-button play-button"></button>
-      <button id="next-button" class="control-button next-button"></button>
-
-      <!-- 进度条 -->
-      <!-- <div class="progress-container">
-        <div class="progress-bar">
-          <div id="progress" class="progress"></div>
-        </div>
-      </div> -->
     </div>
   </div>
 
-
+  <script type="module" src="main.js"></script>
+  <script type="module" src="./music/music.js"></script>
 </body>
 
 </html>

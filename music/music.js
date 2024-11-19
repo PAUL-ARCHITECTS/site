@@ -1,8 +1,5 @@
 const audioPlayer = document.getElementById('audio-player');
-const prevButton = document.getElementById('prev-button');
-const nextButton = document.getElementById('next-button');
 const playButton = document.getElementById('play-button');
-const progressBar = document.getElementById('progress');
 
 // 音频文件列表
 const musicList = [
@@ -43,37 +40,28 @@ function updatePlayButton() {
     }
 }
 
-// 切换到上一首
-function playPreviousTrack() {
-    currentTrackIndex = (currentTrackIndex - 1 + musicList.length) % musicList.length;
-    updateAudioSource();
-}
-
-// 切换到下一首
+// 播放下一首音乐
 function playNextTrack() {
-    currentTrackIndex = (currentTrackIndex + 1) % musicList.length;
+    currentTrackIndex = (currentTrackIndex + 1) % musicList.length; // 循环切换
     updateAudioSource();
-}
-
-// 更新进度条
-function updateProgressBar() {
-    const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-    progressBar.style.width = progress + '%';
 }
 
 // 自动播放下一首
-audioPlayer.addEventListener('ended', () => {
-    playNextTrack();
-});
+audioPlayer.addEventListener('ended', playNextTrack);
 
-// 绑定事件
+// 绑定按钮的播放/暂停切换功能
 playButton.addEventListener('click', togglePlayPause);
-prevButton.addEventListener('click', playPreviousTrack);
-nextButton.addEventListener('click', playNextTrack);
-audioPlayer.addEventListener('timeupdate', updateProgressBar);
 
 // 设置默认音量
 audioPlayer.volume = 0.60;
 
 // 初始化播放器
 updateAudioSource();
+
+// 点击空白处播放下一首
+document.body.addEventListener('click', (event) => {
+    // 确保点击的不是播放按钮
+    if (!event.target.closest('.control-button')) {
+        playNextTrack();
+    }
+});

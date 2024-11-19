@@ -173,60 +173,33 @@ canvas {
     }
 
     /* 按钮样式 */
-    .control-button {
-        background-color: transparent;
-        border: none;
-        color: blue;
-        padding: 15px;
-        font-size: 30px;
-        cursor: pointer;
-        margin: 0 10px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+/* 按钮样式 */
+.control-button {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  padding: 15px;
+  font-size: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .control-button:hover {
-      color: blue;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
+/* 播放按钮（三角形） */
+.play-button:before {
+  content: "▶"; /* 三角形符号 */
+  font-size: 20px;
+  color: blue;
+}
 
-    /* 播放暂停按钮的样式（镂空圆圈） */
-    .play-button {
-        color: blue;
-        font-size: 10px;
-        border: 2px solid rgb(255, 255, 255);
-        border-radius: 50%;
-        width: 5px;
-        height: 5px;
-        display: inline-block;
-        transform: scale(0.5); /* 缩小到原来的 50% */
-        justify-content: center;
-        align-items: center;
-    }
-
-
-
-    .paused .play-button:before {
-      color: blue;
-      content: "❍"; /* 暂停按钮的圆圈符号 */
-      font-size: 5px; /* 基础字体大小 */
-      display: inline-block; /* 确保符号行为一致 */
-      transform: scale(0.5); /* 缩小到原来的 50% */
-      line-height: 1; /* 避免多余的行高 */
-    }
-
-    /* 左右箭头（上一首和下一首） */
-    .prev-button:before {
-      color: blue;
-        content: "◁"; /* 左三角形 */
-    }
-
-    .next-button:before {
-      color: blue;
-        content: "▷"; /* 右三角形 */
-    }
+/* 暂停按钮（圆形） */
+.paused:before {
+  content: "●"; /* 圆形符号 */
+  font-size: 20px;
+  color: blue;
+}
 
     /* 进度条 */
     .progress-container {
