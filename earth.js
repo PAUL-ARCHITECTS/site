@@ -15,7 +15,7 @@ function setup() {
 
 function draw() {
     background(0);  // 设置背景为黑色
-
+    // directionalLight(255, 255, 255, 0, 0, 2) * 5;  // 白色光源，方向为右侧（x: 1, y: 0, z: 0）
     directionalLight(255, 255, 255, -0.5, -0.3, 0) * 5;  // 白色光源，方向为右侧（x: 1, y: 0, z: 0）
     directionalLight(255, 255, 255, -0.5, -0.3, 0) * 5;  // 白色光源，方向为右侧（x: 1, y: 0, z: 0）
     directionalLight(255, 255, 255, -0.5, -0.3, 0) * 5;  // 白色光源，方向为右侧（x: 1, y: 0, z: 0）

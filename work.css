@@ -1,8 +1,10 @@
 body {
+  color: white;
   font-family: 'Times New Roman', Times, serif;
   display: block;
   margin: 0;
   overflow-x: hidden;
+  background-color: black;
 }
 
 canvas {
@@ -31,7 +33,7 @@ canvas {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1vh;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
   z-index: 10;
 }
@@ -86,7 +88,7 @@ position: relative;
   top: -4vw; /* 在父级容器顶部时固定 */
   font-weight: bold;
   font-size: 6vw; /* 字体大小 */
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -102,7 +104,7 @@ position: relative;
   /* 加粗 */
   font-size: 6vw;
   /* 字体大小 */
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   /* 红色文字 */
   cursor: pointer;
   /* 鼠标悬停时显示为可点击 */
@@ -121,7 +123,7 @@ position: relative;
   /* 加粗 */
   font-size: 6vw;
   /* 字体大小 */
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   /* 红色文字 */
   cursor: pointer;
   /* 鼠标悬停时显示为可点击 */
@@ -139,14 +141,14 @@ position: relative;
   /* 加粗 */
   font-size: 6vw;
   /* 字体大小 */
-  color: rgb(0, 25, 151);
+  color: rgb(255, 255, 255);
   /* 红色文字 */
   cursor: pointer;
   /* 鼠标悬停时显示为可点击 */
   transition: color 0.3s;
   /* 平滑的颜色过渡效果 */
   color: transparent;
-  -webkit-text-stroke: 0.1vh rgb(0, 0, 0); /* 添加外部描边 */
+  -webkit-text-stroke: 0.1vh rgb(255, 255, 255); /* 添加外部描边 */
   -webkit-background-clip: text; /* 背景剪裁到文字 */
 }
   

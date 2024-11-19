@@ -1,4 +1,5 @@
 body {
+  color: white;
   font-family: 'Times New Roman', Times, serif;
   display: block;
   margin: 0;
@@ -98,7 +99,7 @@ canvas {
   /* 加粗 */
   font-size: 6vw;
   /* 字体大小 */
-  color: rgb(27, 27, 27);
+  color: rgb(33, 33, 33);
   /* 红色文字 */
   cursor: pointer;
   /* 鼠标悬停时显示为可点击 */
@@ -117,7 +118,7 @@ canvas {
   /* 加粗 */
   font-size: 6vw;
   /* 字体大小 */
-  color: rgb(40, 40, 40);
+  color: rgb(33, 33, 33);
   /* 红色文字 */
   cursor: pointer;
   /* 鼠标悬停时显示为可点击 */
