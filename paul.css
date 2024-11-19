@@ -7,7 +7,10 @@ body {
 
 
 canvas {
-  display: flex;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  display: block;
   z-index: 5;
 }
 
@@ -94,7 +97,7 @@ canvas {
   /* 加粗 */
   font-size: 6vw;
   /* 字体大小 */
-  color: rgb(0, 0, 0);
+  color: rgb(18, 18, 18);
   /* 红色文字 */
   cursor: pointer;
   /* 鼠标悬停时显示为可点击 */
@@ -113,7 +116,7 @@ canvas {
   /* 加粗 */
   font-size: 6vw;
   /* 字体大小 */
-  color: rgb(0, 0, 0);
+  color: rgb(27, 27, 27);
   /* 红色文字 */
   cursor: pointer;
   /* 鼠标悬停时显示为可点击 */
@@ -138,7 +141,7 @@ canvas {
   transition: color 0.3s;
   /* 平滑的颜色过渡效果 */
   color: transparent;
-  -webkit-text-stroke: 0.1vh rgb(0, 0, 0);
+  -webkit-text-stroke: 0.1vh rgb(20, 20, 20);
   /* 添加外部描边 */
   -webkit-background-clip: text;
   背景剪裁到文字
