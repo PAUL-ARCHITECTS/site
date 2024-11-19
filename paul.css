@@ -172,19 +172,19 @@ canvas {
         display: none; /* 隐藏默认的音频控件 */
     }
 
-    /* 按钮样式 */
-/* 按钮样式 */
+/* 控制按钮的通用样式 */
 .control-button {
   background-color: transparent;
   border: none;
   color: blue;
-  padding: 15px;
-  font-size: 30px;
+  width: 20px; /* 设置按钮为正方形 */
+  height: 20px; /* 设置按钮为正方形 */
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 50%; /* 确保按钮是圆形 */
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* 用于光晕动画 */
 }
 
 /* 播放按钮（三角形） */
@@ -199,7 +199,25 @@ canvas {
   content: "●"; /* 圆形符号 */
   font-size: 20px;
   color: blue;
+  display: inline-block;
+  animation: paused-breathing 2s infinite ease-in-out; /* 呼吸动画 */
 }
+
+/* 呼吸动画 */
+@keyframes paused-breathing {
+  0%, 100% {
+    opacity: 0.8; /* 初始和结束状态为半透明 */
+    transform: scale(1); /* 原始大小 */
+    /* box-shadow: 0 0 8px 4px rgba(0, 0, 255, 0.4); 柔和的光晕 */
+  }
+  50% {
+    opacity: 1; /* 完全不透明 */
+    transform: scale(1.2); /* 略微放大 */
+    /* box-shadow: 0 0 15px 6px rgba(0, 0, 255, 0.6); 稍大的光晕 */
+  }
+}
+
+
 
     /* 进度条 */
     .progress-container {
