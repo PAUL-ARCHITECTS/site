@@ -11,7 +11,7 @@ body {
 .container {
   position: fixed;
   top:50vH;
-  left: 11VW;
+  left: 9VW;
   height: 15VH;
   flex-direction: column;
   /* 改变为列方向 */
@@ -29,7 +29,7 @@ body {
 .text {
   font-size: 1vh;
   height: 1vh;
-  color: rgb(159, 159, 159);
+  color: rgb(255, 255, 255);
   opacity: 1;
   /* 初始文字透明 */
   transform: translateY(20px);

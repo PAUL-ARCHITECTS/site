@@ -36,6 +36,7 @@ canvas {
   color: rgb(0, 0, 0);
   text-align: center;
   z-index: 10;
+  /* padding-bottom: ; */
 }
 
 .op {
@@ -48,8 +49,13 @@ canvas {
   animation: none;
 }
 
- 
-  
+#pic-container {
+  /* margin-top: 20vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* 固定的 Header 样式 */
 .header {
   display: grid;
@@ -65,8 +71,8 @@ canvas {
   width: 100vw;
   height: 10vh;
   /* 定义固定的高度 */
-
-  z-index: 1000;
+  user-select: none;
+  z-index: 11;
 
   /* 半透明背景色 */
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 添加阴影效果 */
@@ -74,8 +80,9 @@ canvas {
 
 /* 滚动内容样式 */
 .headerlayout {
-position: relative;
-  top: 0vh; /* 确保滚动内容不被 Header 遮挡 */
+  position: relative;
+  top: 0vh;
+  /* 确保滚动内容不被 Header 遮挡 */
   height: 500vh;
   animation: none;
 }
@@ -85,9 +92,11 @@ position: relative;
 /* 每个 Header 项的样式 */
 .headerdivp {
   position: sticky;
-  top: -4vw; /* 在父级容器顶部时固定 */
+  top: -4vw;
+  /* 在父级容器顶部时固定 */
   font-weight: bold;
-  font-size: 6vw; /* 字体大小 */
+  font-size: 6vw;
+  /* 字体大小 */
   color: rgb(255, 255, 255);
   cursor: pointer;
   transition: color 0.3s ease;
@@ -148,19 +157,21 @@ position: relative;
   transition: color 0.3s;
   /* 平滑的颜色过渡效果 */
   color: transparent;
-  -webkit-text-stroke: 0.1vh rgb(255, 255, 255); /* 添加外部描边 */
-  -webkit-background-clip: text; /* 背景剪裁到文字 */
+  -webkit-text-stroke: 0.1vh rgb(255, 255, 255);
+  /* 添加外部描边 */
+  -webkit-background-clip: text;
+  /* 背景剪裁到文字 */
 }
-  
-  /* 鼠标悬停时改变颜色 */
-  .header div:hover {
-    color: rgb(69, 69, 69);
-    /* 悬停时变为深红色 */
-  }
-  
-  /* 页面内容样式 */
-  .content {
-    margin-top: 100px;
-    /* 给 Header 留出空间 */
-    padding: 20px;
-  }
+
+/* 鼠标悬停时改变颜色 */
+.header div:hover {
+  color: rgb(69, 69, 69);
+  /* 悬停时变为深红色 */
+}
+
+/* 页面内容样式 */
+.content {
+  margin-top: 100px;
+  /* 给 Header 留出空间 */
+  padding: 20px;
+}

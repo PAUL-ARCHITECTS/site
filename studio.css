@@ -53,8 +53,8 @@ body {
   width: 100vw;
   height: 10vh;
   /* 定义固定的高度 */
-
-  z-index: 1000;
+  user-select: none;
+  z-index: 11;
 
   /* 半透明背景色 */
   /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 添加阴影效果 */
@@ -152,4 +152,11 @@ position: relative;
   margin-top: 100px;
   /* 给 Header 留出空间 */
   padding: 20px;
+}
+
+#pic-container {
+  /* margin-top: 20vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
